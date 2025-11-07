@@ -5,10 +5,8 @@ projeto nuvem
 🏗️ Fase 1: Configuração Inicial e Banco de Dados (RDS)O primeiro passo é estabelecer a base de dados em uma rede privada segura.
 
 1. Configuração de Rede e Segurança (VPC)Crie uma VPC (Virtual Private Cloud) com pelo menos duas sub-redes públicas e duas sub-redes privadas (para alta disponibilidade).Configure um NAT Gateway nas sub-redes públicas para permitir que recursos nas sub-redes privadas acessem a internet (para baixar pacotes, etc.) sem expor seus IPs.Crie Security Groups (Grupos de Segurança) necessários (um para o RDS e outro para o Backend).
-2. 
-3. Configuração do Amazon RDSSelecione o serviço Amazon RDS (MySQL, PostgreSQL ou Aurora Serverless).Crie uma Subnet Group que inclua as sub-redes privadas da sua VPC.Crie a Instância do RDS dentro da Subnet Group privada.Configure o Security Group do RDS para aceitar conexões SOMENTE do Security Group do seu Backend (e não da Internet).Requisito: Instância em subnet privada; sem porta exposta à Internet.
-
-4. Scripts SQL IniciaisCrie os scripts SQL (scripts SQL nos entregáveis):Criação de Tabelas/Objetos: CREATE TABLE ...Inserção de Dados: INSERT INTO ... (dados iniciais/exemplo).Procedures (Selects): SELECT * FROM ... (os selects básicos de CRUD e consultas que a API precisará).
+2. Configuração do Amazon RDSSelecione o serviço Amazon RDS (MySQL, PostgreSQL ou Aurora Serverless).Crie uma Subnet Group que inclua as sub-redes privadas da sua VPC.Crie a Instância do RDS dentro da Subnet Group privada.Configure o Security Group do RDS para aceitar conexões SOMENTE do Security Group do seu Backend (e não da Internet).Requisito: Instância em subnet privada; sem porta exposta à Internet.
+3. Scripts SQL IniciaisCrie os scripts SQL (scripts SQL nos entregáveis):Criação de Tabelas/Objetos: CREATE TABLE ...Inserção de Dados: INSERT INTO ... (dados iniciais/exemplo).Procedures (Selects): SELECT * FROM ... (os selects básicos de CRUD e consultas que a API precisará).
 
 
 💻 Fase 2: Desenvolvimento do Backend (API REST) e DockerizaçãoAgora que o banco está pronto, você pode construir e empacotar sua aplicação.
